@@ -1,7 +1,46 @@
 public class Runner {
 
+    public static void main(String[] args){
+        //hasTeen test
+        System.out.println(hasTeen(13, 20, 10));
+
+        //noTriples test
+        int[] a = {1,2,2,1};
+        System.out.println(noTriples(a));
+
+        //makeOutWord test
+        System.out.println(makeOutWord("<<>>", "Yay"));
+
+        //countCode test
+        System.out.println(countCode("aaacodebbb"));
+
+        //countTriple test
+        System.out.println(countTriple("abcXXXabc"));
+
+        //start1 test
+        int [] b = {1, 2, 3};
+        int [] c = {1, 3};
+        System.out.println(start1(b, c));
+
+        //only14 test
+        int [] d = {1, 4, 1, 4};
+        System.out.println(only14(d));
+
+        //fix34 test
+        int [] e = {2, 3, 2, 3, 2, 4, 4};
+        System.out.println(fix34(e));
+
+        //greenTicket test
+        System.out.println(greenTicket(1, 2, 3));
+
+        //noTeenSum test
+        System.out.println(noTeenSum(2, 1, 16));
+    }
+
+
+
     // Warm up 1 - hasTeen
-    public boolean hasTeen(int a, int b, int c) {
+    public static boolean hasTeen(int a, int b, int c) {
         if((13 <= a && 19 >= a) || (13 <= b && 19 >= b) || (13 <= c && 19 >= c)){
             return true;
         }else{
@@ -11,7 +50,7 @@ public class Runner {
 
 
     // Warm up 2 - noTriples
-    public boolean noTriples(int[] nums) {
+    public static boolean noTriples(int[] nums) {
         boolean x = true;
         for(int i = 2; i < nums.length; i++){
             if(nums[i] == nums[i - 1] && nums[i - 1] == nums[i - 2]){
@@ -23,7 +62,7 @@ public class Runner {
 
 
     // String 1 - makeOutWord
-    public String makeOutWord(String out, String word) {
+    public static String makeOutWord(String out, String word) {
         String x = out.substring(0, 2);
         String y = out.substring(2);
         String z = x + word;
@@ -32,7 +71,7 @@ public class Runner {
 
 
     // String 2 - countCode
-    public int countCode(String str) {
+    public static int countCode(String str) {
         int count = 0;
         for(int i = 3; i < str.length(); i++){
             if(str.substring(i - 3, i - 2).equals("c") &&
@@ -46,7 +85,7 @@ public class Runner {
 
 
     // String 3 - countTriple
-    public int countTriple(String str) {
+    public static int countTriple(String str) {
         int count = 0;
         for(int i = 2; i < str.length(); i++){
             if(str.substring(i - 2, i - 1).equals(str.substring(i - 1, i)) &&
@@ -58,7 +97,7 @@ public class Runner {
     }
 
     // Array 1 - start1
-    public int start1(int[] a, int[] b) {
+    public static int start1(int[] a, int[] b) {
         int count = 0;
         if(a.length >= 1){
             if(a[0] == 1){
@@ -75,7 +114,7 @@ public class Runner {
 
 
     // Array 2 - only14
-    public boolean only14(int[] nums) {
+    public static boolean only14(int[] nums) {
         boolean only14 = true;
         for(int i = 0; i < nums.length; i++){
             if(nums[i] != 4 && nums[i] != 1){
@@ -86,7 +125,7 @@ public class Runner {
     }
 
     // Array 3 - fix34
-    public int[] fix34(int[] nums) {
+    public static int[] fix34(int[] nums) {
         int temp=0;
         for(int i = 0; i < nums.length; i++){
             if(nums[i] == 3){
@@ -117,7 +156,7 @@ public class Runner {
 
 
     // Logic 1 - greenTicket
-    public int greenTicket(int a, int b, int c) {
+    public static int greenTicket(int a, int b, int c) {
         boolean all = false;
         boolean half = false;
         int num = 0;
@@ -139,7 +178,7 @@ public class Runner {
 
 
     // Logic 2 - noTeenSum
-    public int noTeenSum(int a, int b, int c) {
+    public static int noTeenSum(int a, int b, int c) {
         int sum = 0;
         if(a >= 13 && a <= 19){
             if(a != 15 && a != 16){
